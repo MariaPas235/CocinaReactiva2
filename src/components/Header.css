@@ -1,0 +1,99 @@
+.app-header {
+  /* full-bleed header with solid accent color */
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-shadow: 0 10px 30px rgba(16,24,40,0.06);
+  background: var(--accent); /* solid primary green */
+  color: #fff;
+}
+
+.app-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 22px 28px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.9rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+.app-header .subtitle {
+  color: rgba(255,255,255,0.95);
+  font-weight: 400;
+}
+
+.brand-emoji {
+  width:56px;
+  height:56px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.6rem;
+  background: var(--panel-bg);
+  .app-header {
+    position: relative;
+    width: calc(100% - 80px);
+    margin: 12px auto;
+    box-shadow: 0 20px 40px rgba(16,24,40,0.08);
+    background: var(--accent);
+    color: #fff;
+    border-radius: 12px;
+  }
+
+  .app-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 22px 28px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+
+  .app-header h1 {
+    margin: 0;
+    font-size: 1.9rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.6px;
+    text-shadow: 0 6px 18px rgba(16,24,40,0.18);
+  }
+
+  .app-header .subtitle {
+    color: rgba(255,255,255,0.95);
+    font-weight: 400;
+    letter-spacing: 0.2px;
+  }
+
+  .brand-emoji {
+    width:62px;
+    height:62px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.8rem;
+    background: var(--accent-2);
+    color:#fff;
+    box-shadow: 0 12px 30px rgba(16,24,40,0.12);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  @media (max-width: 720px) {
+    .app-header-inner { padding: 16px }
+    .brand-emoji { width:44px; height:44px }
+    .app-header h1 { font-size: 1.4rem }
+  }
+

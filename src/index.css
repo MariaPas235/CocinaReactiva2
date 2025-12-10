@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+:root {
+  /* Typography */
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Color palette - warm & visually rich */
+  /* Greens: background pastel and panels slightly lighter */
+  --bg: #dff6e9; /* pastel green background */
+  --panel-bg: #eefbf3; /* panels slightly lighter than background */
+  --text: #0f2b21; /* deep greenish slate */
+  --subtext: #275644; /* muted */
+  --muted: #3b6b56;
+  --accent: #2f7a57; /* primary green accent (darker) */
+  --accent-2: #66b585; /* lighter green accent */
+  --accent-3: #4fa06f;
+  --border: rgba(16,24,20,0.06);
+  --glass: rgba(255,255,255,0.6);
+
+  color-scheme: light dark;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* keep same palette for light mode, slight tweaks possible */
+    --bg: #f6f4ef;
+    --panel-bg: #ffffff;
+    --text: #172023;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #07121a;
+    --panel-bg: #08121a;
+    --text: #e6eef6;
+    --subtext: #b9c4cc;
+    --muted: #96a3ad;
+    --accent: #df8e6b;
+    --accent-2: #79c395;
+    --accent-3: #f2c57c;
+    --border: rgba(255,255,255,0.04);
+  }
+}
+
+/* Headings use Playfair Display for a refined look */
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+
+body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial }

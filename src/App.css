@@ -1,0 +1,145 @@
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 20px; /* small page padding so content doesn't touch edges */
+  text-align: left;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* App layout */
+#app-root {
+  width: 100%;
+  max-width: 1200px; /* slightly smaller than full width */
+  margin: 0 auto; /* center the content area */
+  padding: 28px 20px;
+  background: transparent;
+  border-radius: 12px;
+}
+
+.app-header {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.app-header .subtitle {
+  color: var(--subtext);
+  margin-top: 4px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1rem;
+}
+
+.left {
+  text-align: left;
+}
+.right {
+  text-align: left;
+}
+
+.recipe-form, .viewer, .recipe-list, .searchbar {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.recipe-form h2 { margin: 0 0 8px 0 }
+.recipe-form label { display: block; margin-bottom: 8px }
+.recipe-form input, .recipe-form textarea, .recipe-form select { width: 100%; padding:6px; box-sizing: border-box }
+.form-actions { text-align: right }
+.form-actions button { padding:8px 12px }
+
+.recipe-list { display: grid; gap:8px }
+.recipe-card { padding:10px; border-radius:6px; background: #fafafa }
+.recipe-card.fav { box-shadow: 0 0 0 3px #fff3e0 inset }
+.card-header { display:flex; justify-content:space-between; align-items:center; cursor:pointer }
+.muted { color:#666; font-size:0.9rem }
+.card-actions { display:flex; gap:8px; margin-top:8px }
+
+.viewer h2 { margin-top:0 }
+.servings { display:flex; gap:8px; align-items:center; margin-bottom:8px }
+.servings button { padding:6px 8px }
+
+.tag { padding:4px 8px; border-radius:6px; color:#fff; font-size:0.85rem }
+
+.searchbar { position:relative }
+.search-results { position:absolute; left:0; right:0; top:44px; background:#fff; border:1px solid #ddd; max-height:200px; overflow:auto; z-index:5 }
+.search-item { display:block; width:100%; text-align:left; padding:8px; border:0; background:transparent; cursor:pointer }
+
+.app-footer { margin-top:1rem; color:#444; text-align:center }
+
+body { background-color: var(--bg) }
+
+/* Panels use surface color and subtle border */
+.recipe-form, .viewer, .recipe-list, .searchbar {
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+#app-root { color: var(--text) }
+
+.muted { color: var(--muted) }
+
+.card-header h3 { color: var(--text); font-family: 'Playfair Display', serif; font-weight:600; font-size:1.05rem }
+
+.card-actions button, .form-actions button { font-weight:600 }
+
+main { padding-top: 6px }
+
+/* Make the left column visually stacked cards with subtle gaps and background */
+.left { display:flex; flex-direction:column }
+.left > * { box-shadow: 0 8px 28px rgba(16,24,40,0.04); }
+
+.right { position: sticky; top: 20px }
+
+.add-recipe-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(47,122,87,0.08);
+  font-weight:600;
+}
+.add-recipe-btn:hover { transform: translateY(-2px); opacity:0.98 }

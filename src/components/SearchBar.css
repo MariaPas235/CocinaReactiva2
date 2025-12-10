@@ -1,0 +1,4 @@
+.searchbar input { width:100%; padding:12px; border-radius:12px; border:1px solid var(--border); background: var(--panel-bg); box-shadow: none }
+.search-results { border-radius:10px; overflow:hidden; border:1px solid var(--border); background:var(--panel-bg) }
+.search-item { padding:12px 14px; color:var(--text); font-weight:600 }
+.search-item:hover { background: rgba(47,122,87,0.06) }
