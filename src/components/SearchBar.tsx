@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './SearchBar.css'
 import type { Recipe } from '../types'
 
-type Props = {
+interface SearchBarProps {
   recipes: Recipe[]
   onSelect: (id: string | null) => void
 }
 
-const SearchBar: React.FC<Props> = ({ recipes, onSelect }) => {
+function SearchBar({ recipes, onSelect }: SearchBarProps) {
   const [query, setQuery] = useState('')
 
   const results = recipes.filter((r) => r.title.toLowerCase().includes(query.toLowerCase()))
 
   return (
-    <div className="searchbar">
-      <input placeholder="Buscar receta..." value={query} onChange={(e) => setQuery(e.target.value)} />
+    <div className="search-bar">
+      <input className="search-bar__input" placeholder="Buscar receta..." value={query} onChange={(e) => setQuery(e.target.value)} />
       {query && (
-        <div className="search-results">
+        <div className="search-bar__results">
           {results.length === 0 ? <p className="muted">Sin resultados</p> : results.map((r) => (
-            <button key={r.id} className="search-item" onClick={() => { onSelect(r.id); setQuery('') }}>{r.title}</button>
+            <button key={r.id} className="search-bar__item" onClick={() => { onSelect(r.id); setQuery('') }}>{r.title}</button>
           ))}
         </div>
       )}

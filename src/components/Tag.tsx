@@ -1,7 +1,6 @@
-import React from 'react'
 import './Tag.css'
 
-type Props = {
+interface TagProps {
   text: string
   color?: string
 }
@@ -14,7 +13,7 @@ const categoryColors: Record<string, string> = {
   Cena: 'var(--accent-2)',
 }
 
-const Tag: React.FC<Props> = ({ text, color }) => {
+function Tag({ text, color }: TagProps) {
   const bg = color ?? categoryColors[text] ?? 'var(--accent)'
   return (
     <span className="tag" style={{ background: bg }}>

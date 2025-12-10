@@ -74,7 +74,7 @@ main {
   text-align: left;
 }
 
-.recipe-form, .viewer, .recipe-list, .searchbar {
+.recipe-form, .recipe-viewer, .recipe-list, .search-bar {
   background: #fff;
   border: 1px solid #e6e6e6;
   padding: 12px;
@@ -91,26 +91,26 @@ main {
 .recipe-list { display: grid; gap:8px }
 .recipe-card { padding:10px; border-radius:6px; background: #fafafa }
 .recipe-card.fav { box-shadow: 0 0 0 3px #fff3e0 inset }
-.card-header { display:flex; justify-content:space-between; align-items:center; cursor:pointer }
+.recipe-card__header { display:flex; justify-content:space-between; align-items:center; cursor:pointer }
 .muted { color:#666; font-size:0.9rem }
-.card-actions { display:flex; gap:8px; margin-top:8px }
+.recipe-card__actions { display:flex; gap:8px; margin-top:8px }
 
-.viewer h2 { margin-top:0 }
-.servings { display:flex; gap:8px; align-items:center; margin-bottom:8px }
-.servings button { padding:6px 8px }
+.recipe-viewer h2 { margin-top:0 }
+.recipe-viewer__servings { display:flex; gap:8px; align-items:center; margin-bottom:8px }
+.recipe-viewer__servings button { padding:6px 8px }
 
 .tag { padding:4px 8px; border-radius:6px; color:#fff; font-size:0.85rem }
 
-.searchbar { position:relative }
-.search-results { position:absolute; left:0; right:0; top:44px; background:#fff; border:1px solid #ddd; max-height:200px; overflow:auto; z-index:5 }
-.search-item { display:block; width:100%; text-align:left; padding:8px; border:0; background:transparent; cursor:pointer }
+.search-bar { position:relative }
+.search-bar__results { position:absolute; left:0; right:0; top:44px; background:#fff; border:1px solid #ddd; max-height:200px; overflow:auto; z-index:5 }
+.search-bar__item { display:block; width:100%; text-align:left; padding:8px; border:0; background:transparent; cursor:pointer }
 
 .app-footer { margin-top:1rem; color:#444; text-align:center }
 
 body { background-color: var(--bg) }
 
 /* Panels use surface color and subtle border */
-.recipe-form, .viewer, .recipe-list, .searchbar {
+.recipe-form, .recipe-viewer, .recipe-list, .search-bar {
   background: var(--panel-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -120,9 +120,9 @@ body { background-color: var(--bg) }
 
 .muted { color: var(--muted) }
 
-.card-header h3 { color: var(--text); font-family: 'Playfair Display', serif; font-weight:600; font-size:1.05rem }
+.recipe-card__header h3 { color: var(--text); font-family: 'Playfair Display', serif; font-weight:600; font-size:1.05rem }
 
-.card-actions button, .form-actions button { font-weight:600 }
+.recipe-card__actions button, .form-actions button { font-weight:600 }
 
 main { padding-top: 6px }
 

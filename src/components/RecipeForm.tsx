@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './RecipeForm.css'
 import type { Recipe } from '../types'
 
-type Props = {
+interface RecipeFormProps {
   onAdd: (r: Omit<Recipe, 'id'>) => void
   onClose?: () => void
 }
 
-const RecipeForm: React.FC<Props> = ({ onAdd, onClose }) => {
+function RecipeForm({ onAdd, onClose }: RecipeFormProps) {
   const [title, setTitle] = useState('')
   const [category, setCategory] = useState('Principal')
   const [ingredientsText, setIngredientsText] = useState('')

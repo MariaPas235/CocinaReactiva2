@@ -1,7 +1,6 @@
-import React from 'react'
 import './Header.css'
 
-const Header: React.FC = () => {
+function Header() {
   return (
     <header className="app-header">
       <div className="app-header-inner">

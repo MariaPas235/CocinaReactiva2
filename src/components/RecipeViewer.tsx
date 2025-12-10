@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './RecipeViewer.css'
 import type { Recipe } from '../types'
 import IconButton from './IconButton'
 
-type Props = {
+interface RecipeViewerProps {
   recipe: Recipe | null
   onUpdate: (id: string, patch: Partial<Recipe>) => void
   onToggleFavorite?: (id: string) => void
 }
 
-const RecipeViewer: React.FC<Props> = ({ recipe, onUpdate, onToggleFavorite }) => {
+function RecipeViewer({ recipe, onUpdate, onToggleFavorite }: RecipeViewerProps) {
   const [localServings, setLocalServings] = useState<number>(recipe?.servings ?? 0)
   const [isEditing, setIsEditing] = useState(false)
   const [checked, setChecked] = useState<boolean[]>([])
@@ -48,7 +48,7 @@ const RecipeViewer: React.FC<Props> = ({ recipe, onUpdate, onToggleFavorite }) =
     }
   }, [recipe])
 
-  if (!recipe) return <div className="viewer empty">Selecciona una receta para ver los detalles</div>
+  if (!recipe) return <div className="recipe-viewer recipe-viewer--empty">Selecciona una receta para ver los detalles</div>
 
   const startEdit = () => {
     setIsEditing(true)
@@ -90,10 +90,10 @@ const RecipeViewer: React.FC<Props> = ({ recipe, onUpdate, onToggleFavorite }) =
   }
 
   return (
-    <div className="viewer">
-      <div className="viewer-header">
+    <div className="recipe-viewer">
+      <div className="recipe-viewer__header">
         <h2>{recipe.title}</h2>
-        <div className="viewer-actions">
+        <div className="recipe-viewer__actions">
           {!isEditing ? (
             <>
               <IconButton onClick={startEdit} color="var(--accent-2)" size="sm">Editar</IconButton>
@@ -110,18 +110,18 @@ const RecipeViewer: React.FC<Props> = ({ recipe, onUpdate, onToggleFavorite }) =
       {!isEditing ? (
         <>
           <p className="muted">Categoría: {recipe.category}</p>
-          <div className="servings">
+          <div className="recipe-viewer__servings">
             <button onClick={() => { const v = Math.max(1, localServings - 1); setLocalServings(v); onUpdate(recipe.id, { servings: v }) }}>-</button>
             <strong>{localServings} raciones</strong>
             <button onClick={() => { const v = localServings + 1; setLocalServings(v); onUpdate(recipe.id, { servings: v }) }}>+</button>
           </div>
           <h3>Ingredientes</h3>
-          <ul className="ingredients">
+          <ul className="recipe-viewer__ingredients">
             {recipe.ingredients.map((ing, i) => (
-              <li key={i} className={`ingredient-item`}>
-                <label className="ingredient-label">
+              <li key={i} className={`recipe-viewer__ingredient`}>
+                <label className="recipe-viewer__ingredient-label">
                   <input type="checkbox" checked={!!checked[i]} onChange={() => toggleChecked(i)} />
-                  <span className="ingredient-text">{ing}</span>
+                  <span className="recipe-viewer__ingredient-text">{ing}</span>
                 </label>
               </li>
             ))}
@@ -130,7 +130,7 @@ const RecipeViewer: React.FC<Props> = ({ recipe, onUpdate, onToggleFavorite }) =
           <p>{recipe.steps}</p>
         </>
       ) : (
-        <form className="viewer-edit" onSubmit={submitEdit}>
+        <form className="recipe-viewer__edit" onSubmit={submitEdit}>
           <label>
             Título
             <input value={title} onChange={(e) => setTitle(e.target.value)} />
