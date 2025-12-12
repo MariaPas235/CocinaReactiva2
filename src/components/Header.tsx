@@ -10,6 +10,7 @@ function Header() {
         </div>
         <p className="subtitle">Añade, gestiona y visualiza tus recetas favoritas</p>
       </div>
+      
     </header>
   )
 }

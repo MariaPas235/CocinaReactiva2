@@ -5,16 +5,17 @@ interface TagProps {
   color?: string
 }
 
-const categoryColors: Record<string, string> = {
-  Desayuno: 'var(--accent-3)',
-  Principal: 'var(--accent)',
-  Entrada: 'var(--accent-2)',
+// colores por categoría
+const categoryColors: { [key: string]: string } = {
+  Desayuno: '#da8e1bed',
+  Principal: '#179942ff',
+  Entrada: '#dc462fff',
   Postre: '#c77dff',
-  Cena: 'var(--accent-2)',
+  Cena: '#61add6ff',
 }
 
 function Tag({ text, color }: TagProps) {
-  const bg = color ?? categoryColors[text] ?? 'var(--accent)'
+  const bg = color || categoryColors[text] || 'var(--accent)'
   return (
     <span className="tag" style={{ background: bg }}>
       {text}
